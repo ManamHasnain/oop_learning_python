@@ -12,5 +12,9 @@ class Student:
 
 stud1=Student("ali",[90,85,80])
 stud2=Student("hassan",[89,78,90,73])
+
+stud1.name="hassan" #can also change name from here 
+stud2.marks=[70,81,69,90] #can also change marks directly from here
+
 stud1.average()
 stud2.average()
