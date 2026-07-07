@@ -2,27 +2,27 @@ class Account:
     def __init__(self, account_no, balance=0):
         # Initialize account number and balance
         self.account_no = account_no
-        self.balance = balance
+        self.__balance = balance
 
     # Method to withdraw money
     def debit(self, amount):
         # Check if sufficient balance is available
-        if amount > self.balance:
+        if amount > self.__balance:
             print("❌ Insufficient balance!")
         else:
-            self.balance -= amount
+            self.__balance -= amount
             print(f"✅ {amount} withdrawn from Account {self.account_no}")
             self.show_balance()
 
     # Method to deposit money
     def credit(self, amount):
-        self.balance += amount
+        self.__balance += amount
         print(f"✅ {amount} deposited into Account {self.account_no}")
         self.show_balance()
 
     # Method to display current balance
     def show_balance(self):
-        print(f"💰 Current Balance: {self.balance}\n")
+        print(f"💰 Current Balance: {self.__balance}\n")
 
 
 # -------------------------------
