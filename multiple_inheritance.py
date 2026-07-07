@@ -12,13 +12,14 @@ class Child(Father,Mother):
         self.name=name
         super().__init__(salary)
         super().hair()
+        super().eyes()
 
 
     def height(self):
         print("I am short heighted")
 
 father=Father(19000)
-print(father.salary)
+# print(father.salary)
 child1=Child("ali",10000)
 print(child1.name)
 print(child1.salary)
