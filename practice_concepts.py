@@ -34,30 +34,55 @@
 # s=Student("A+")
 # s.get_info()
 
+#multi level inheritance concept 
+# class Car:
+#     @staticmethod
+#     def start():
+#         print("car starts")
+#     @staticmethod
+#     def stop():
+#         print("car stops")
+# class ToyotaCar(Car):
+#     def __init__(self,brand):
+#         self.brand=brand
+#     def showinfo(self):
+#         print("car brand : ",self.brand)
 
-class Car:
-    @staticmethod
-    def start():
-        print("car starts")
-    @staticmethod
-    def stop():
-        print("car stops")
-class ToyotaCar(Car):
-    def __init__(self,brand):
-        self.brand=brand
-    def showinfo(self):
-        print("car brand : ",self.brand)
+# class Fortunar(ToyotaCar):
+#     def __init__(self, brand, type):
+#         super().__init__(brand)
+#         self.type=type
+#     def showinfo(self):
+#         super().showinfo()
+#         print("car type : ",self.type)
+# car1=Fortunar("fortunar","diesel")
+# car1.start()
+# car1.stop()
+# car1.showinfo()
 
-class Fortunar(ToyotaCar):
-    def __init__(self, brand, type):
-        super().__init__(brand)
-        self.type=type
-    def showinfo(self):
-        super().showinfo()
-        print("car type : ",self.type)
-car1=Fortunar("fortunar","diesel")
-car1.start()
-car1.stop()
-car1.showinfo()
 
-        
+#class methods
+class Student:
+    college_name="abc college"
+    def __init__(self,name):
+        self.name=name
+#another way to change class attribute
+    # def change_collegename(self,new_collegeName):
+    #     Student.college_name=new_collegeName
+    @classmethod
+    def change_collegename(cls,new_college_name):
+        cls.college_name=new_college_name
+stud1=Student("ali")
+stud2=Student("hassan")
+#both student ali and hassan belongs to abc college
+print(stud1.name, "belongs to ", stud1.college_name)
+print(stud2.name, "belongs to ", stud2.college_name)
+print(Student.college_name)
+#we want to change schoool name or we want to shift both student to another school
+Student.change_collegename("xyz college")
+# stud1.change_collegename("xyz college")
+print(stud1.name, "belongs to ", stud1.college_name)
+print(stud2.name, "belongs to ", stud2.college_name)
+print(Student.college_name)
+
+
